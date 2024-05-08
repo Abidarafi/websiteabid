@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Gunakan font Poppins -->
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #4e79a7, #a7c5eb); /* Gradien biru gelap ke terang */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Poppins', sans-serif; /* Gunakan font Poppins */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            flex: 0 0 calc(50% - 20px); /* Set lebar kartu */
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang lebih transparan */
+            border: 2px solid #4e79a7; /* Warna bingkai sama dengan warna gradien tergelap */
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            transition: transform 0.3s ease; /* Tambahkan transisi */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Efek sedikit melayang saat hover */
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5em; /* Ukuran font yang lebih besar */
+            font-weight: 700; /* Tebal */
+            color: #1a1a1a; /* Warna teks lebih gelap */
+            text-transform: uppercase; /* Huruf kapital */
+            margin-bottom: 15px; /* Jarak bawah */
+        }
+
+        .card img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto 10px; /* 10px margin bawah */
+        }
+
+        .card p {
+            font-size: 1.1em; /* Ukuran font paragraf */
+            color: #333; /* Warna teks yang lebih gelap */
+            line-height: 1.5; /* Tinggi baris */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: color 0.3s ease; /* Tambahkan transisi warna */
+        }
+
+        nav ul li a:hover {
+            color: #a7c5eb; /* Warna biru terang saat hover */
+        }
+
+        /* Media queries untuk tampilan responsif */
+        @media screen and (max-width: 600px) {
+            .card {
+                flex-basis: 100%; /* Set lebar kartu menjadi 100% pada layar kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#Beranda">Beranda</a></li>
+                <li><a href="#Konten1">Konten 1</a></li>
+                <li><a href="#Konten2">Konten 2</a></li>
+                <li><a href="#Konten3">Konten 3</a></li>
+                <li><a href="#Konten4">Konten 4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="card" id="Konten1">
+            <h2>Konten 1</h2>
+            <img src="Gambar/Kegiatan HIMASI.jpg" alt="Konten 1">
+            <p>Konten 1 adalah konten Kegiatan HIMASI.</p>
+        </article>
+
+        <article class="card" id="Konten2">
+            <h2>Konten 2</h2>
+            <img src="Gambar/ASLAB.jpg" alt="Konten 2">
+            <p>Konten 2 adalah konten foto ASLAB.</p>
+        </article>
+
+        <article class="card" id="Konten3">
+            <h2>Konten 3</h2>
+            <img src="Gambar/Mentor Karisma 2023.jpg" alt="Konten 3">
+            <p>Konten 3 adalah konten sebagai mentor.</p>
+        </article>
+
+        <article class="card" id="Konten4">
+            <h2>Konten 4</h2>
+            <img src="Gambar/Pelantikan RELASI.jpg" alt="Konten 4">
+            <p>Konten 4 adalah konten pelantikan RELASI.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>ABID MUHAMMAD ARAFI.</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menampilkan konten sesuai yang dipilih
+        function showContent(contentId) {
+            // Semua konten dihilangkan dari tampilan
+            var cards = document.querySelectorAll('.card');
+            cards.forEach(function(card) {
+                card.style.display = 'none';
+            });
+            // Konten yang dipilih ditampilkan
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
